@@ -29,6 +29,11 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedMethods("GET", "POST", "DELETE", "PUT")
                 .allowCredentials(true);
 
+        registry.addMapping("/api/bus/**")
+                .allowedOrigins("https://docs.yi.or.kr:8094", "https://192.168.10.47:8094","https://localhost:8094","http://localhost:5173")
+                .allowedMethods("GET", "POST", "DELETE", "PUT")
+                .allowCredentials(true);
+
         registry.addMapping("/v3/api-docs/**")
                 .allowedOrigins("https://docs.yi.or.kr:8094", "https://192.168.10.47:8094","https://localhost:8094")
                 .allowedMethods("*");
